@@ -1,10 +1,11 @@
 "use server";
 
 import { Databases, ID, Query } from "node-appwrite";
-import { createAdminClient } from "../appwrite";
+import { createAdminClient, createSessionClient } from "../appwrite";
 import { appwriteConfig } from "../appwrite/config";
 import { parseStringify } from "../utils";
 import { cookies } from "next/headers";
+import { avatarPlaceholderUrl } from "@/constant";
 
 // Get user by email
 const getUserByEmail = async (email: string) => {
@@ -55,8 +56,7 @@ export const createAccount = async ({
         fullName,
         email,
         accountId,
-        avatar:
-          "https://www.366icons.com/media/01/profile-avatar-account-icon-16699.png",
+        avatar: avatarPlaceholderUrl,
       }
     );
   }
@@ -85,4 +85,19 @@ export const verifySecret = async ({
   } catch (error) {
     handleError(error, "Failed to verify secret");
   }
+};
+
+export const getCurrentUser = async () => {
+  const { database, account } = await createSessionClient();
+  const result = await account.get();
+
+  const user = await database.listDocuments(
+    appwriteConfig.databaseId,
+    appwriteConfig.userCollectionId,
+    [Query.equal("accountId", result.$id)]
+  );
+
+  if (user.total <= 0) return null;
+
+  return parseStringify(user.documents[0]);
 };
