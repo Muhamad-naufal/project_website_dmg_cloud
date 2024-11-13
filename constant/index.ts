@@ -29,27 +29,27 @@ export const NavItems = [
 export const actionsDropdownItems = [
   {
     label: "Ganti Nama",
-    icon: "/assets/icons/edit.svg",
+    icon: "/edit.svg",
     value: "rename",
   },
   {
     label: "Detail",
-    icon: "/assets/icons/info.svg",
+    icon: "/info.svg",
     value: "details",
   },
   {
     label: "Bagikan",
-    icon: "/assets/icons/share.svg",
+    icon: "/share.svg",
     value: "share",
   },
   {
     label: "Download",
-    icon: "/assets/icons/download.svg",
+    icon: "/download.svg",
     value: "download",
   },
   {
     label: "Hapus",
-    icon: "/assets/icons/delete.svg",
+    icon: "/delete.svg",
     value: "delete",
   },
 ];

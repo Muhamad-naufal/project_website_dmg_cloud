@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sort = () => {
-  return <div>Sort</div>;
+  return <div>Urut</div>;
 };
 
 export default Sort;
