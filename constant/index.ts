@@ -56,27 +56,27 @@ export const actionsDropdownItems = [
 
 export const sortTypes = [
   {
-    label: "Date created (newest)",
+    label: "Tanggal dibuat (terbaru)",
     value: "$createdAt-desc",
   },
   {
-    label: "Created Date (oldest)",
+    label: "Tanggal dibuat (terlama)",
     value: "$createdAt-asc",
   },
   {
-    label: "Name (A-Z)",
+    label: "Nama (A-Z)",
     value: "name-asc",
   },
   {
-    label: "Name (Z-A)",
+    label: "Nama (Z-A)",
     value: "name-desc",
   },
   {
-    label: "Size (Highest)",
+    label: "Ukuran (terbesar)",
     value: "size-desc",
   },
   {
-    label: "Size (Lowest)",
+    label: "Ukuran (terkecil)",
     value: "size-asc",
   },
 ];
