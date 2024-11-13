@@ -1,6 +1,3 @@
-Here’s a basic `README.md` template for running a Next.js application that uses ShadCN UI and Appwrite:
-
-````markdown
 # My Next.js App with ShadCN UI and Appwrite
 
 This project is a Next.js application using ShadCN UI for the user interface components and Appwrite as the backend for handling authentication, database, and storage.
@@ -23,7 +20,6 @@ Follow these steps to set up and run the application.
 git clone https://github.com/your-username/your-repository.git
 cd your-repository
 ```
-````
 
 ### 2. Install Dependencies
 
