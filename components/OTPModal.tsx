@@ -39,15 +39,24 @@ const OTPModal = ({
     try {
       const sessionId = await verifySecret({ accountId, password });
       if (sessionId) router.push("/");
-    } catch (error) {
-      console.error("failed to verify OTP", error);
+    } catch (err) {
+      // Use alert() for error
+      alert("OTP yang kamu masukin salah. Coba lagi yah.");
     }
 
     setIsLoading(false);
   };
 
   const handleResendOTP = async () => {
-    await sendEmailOTP({ email });
+    setIsLoading(true);
+    try {
+      await sendEmailOTP({ email });
+      alert("OTP berhasil dikirim ulang. Cek email kamu yah.");
+    } catch (err) {
+      console.error("Failed to resend OTP", err);
+      alert("Gagal mengirim ulang OTP. Coba lagi yah.");
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -58,7 +67,7 @@ const OTPModal = ({
             Masukin OTP kamu
             <Image
               src="/close.svg"
-              alt="tutup"
+              alt="Tutup"
               width={20}
               height={20}
               onClick={() => setIsOpen(false)}
@@ -68,8 +77,8 @@ const OTPModal = ({
           <AlertDialogDescription className="subtitle-2 text-center text-light-100">
             Email yang kamu masukin adalah{" "}
             <span className="pl-1 text-brand">{email}</span>, jangan lupa cek
-            email kamu yah, OTPnya udah dikirim. Kalo ga ada, coba cek spam atau
-            klik tombol dibawah ini buat ngirim ulang.
+            email kamu yah, OTP-nya udah dikirim. Kalo ga ada, coba cek spam
+            atau klik tombol dibawah ini buat ngirim ulang.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <InputOTP maxLength={6} value={password} onChange={setPassword}>
@@ -89,6 +98,7 @@ const OTPModal = ({
               onClick={handleSubmit}
               className="shad-submit-btn h-12"
               type="button"
+              disabled={isLoading} // Disable submit button while loading
             >
               Submit
               {isLoading && (
@@ -101,6 +111,8 @@ const OTPModal = ({
                 />
               )}
             </AlertDialogAction>
+
+            {/* Resend OTP button */}
             <div className="subtitle-2 mt-2 text-center text-light-100">
               Nggak dapet kode di email kamu?
               <Button
@@ -108,6 +120,7 @@ const OTPModal = ({
                 variant="link"
                 onClick={handleResendOTP}
                 className="pl-1 text-brand"
+                disabled={isLoading} // Disable button while loading
               >
                 Kirim ulang
               </Button>

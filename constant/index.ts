@@ -5,12 +5,12 @@ export const NavItems = [
     href: "/",
   },
   {
-    name: "Douments",
+    name: "Dokumen",
     icon: "/documents.svg",
     href: "/documents",
   },
   {
-    name: "Images",
+    name: "Gambar",
     icon: "/images.svg",
     href: "/images",
   },
@@ -20,7 +20,7 @@ export const NavItems = [
     href: "/media",
   },
   {
-    name: "Others",
+    name: "Lainnya",
     icon: "/others.svg",
     href: "/others",
   },
@@ -28,17 +28,17 @@ export const NavItems = [
 
 export const actionsDropdownItems = [
   {
-    label: "Rename",
+    label: "Ganti Nama",
     icon: "/assets/icons/edit.svg",
     value: "rename",
   },
   {
-    label: "Details",
+    label: "Detail",
     icon: "/assets/icons/info.svg",
     value: "details",
   },
   {
-    label: "Share",
+    label: "Bagikan",
     icon: "/assets/icons/share.svg",
     value: "share",
   },
@@ -48,7 +48,7 @@ export const actionsDropdownItems = [
     value: "download",
   },
   {
-    label: "Delete",
+    label: "Hapus",
     icon: "/assets/icons/delete.svg",
     value: "delete",
   },
