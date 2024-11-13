@@ -90,9 +90,4 @@ yarn start
 
 ---
 
-Feel free to customize this template according to your application's specifics.
-
-```
-
 This `README.md` covers all essential steps from setup to running and deploying the application. Let me know if you need additional details or customizations!
-```
