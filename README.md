@@ -1,93 +1,94 @@
-# My Next.js App with ShadCN UI and Appwrite
+# DMG Cloud Project
 
-This project is a Next.js application using ShadCN UI for the user interface components and Appwrite as the backend for handling authentication, database, and storage.
+Ini adalah proyek aplikasi Next.js yang pakai ShadCN UI buat komponen antarmuka dan Appwrite sebagai backend untuk ngurusin autentikasi, database, dan penyimpanan.
 
-## Prerequisites
+## Persiapan Sebelum Mulai
 
-Before running this application, ensure you have the following installed:
+Sebelum menjalankan aplikasi ini, pastikan kamu sudah punya:
 
-- **Node.js** (v16 or higher)
-- **npm** or **yarn**
-- **Appwrite** server (if you're running Appwrite locally, ensure it's properly configured)
+- **Node.js** (versi 16 ke atas)
+- **npm** atau **yarn**
+- **Server Appwrite** (kalau pakai Appwrite lokal, pastikan udah diatur dengan benar)
 
-## Getting Started
+## Cara Mulai
 
-Follow these steps to set up and run the application.
+Ikuti langkah-langkah ini untuk setup dan menjalankan aplikasinya.
 
-### 1. Clone the Repository
+### 1. Clone Repositori
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+git clone https://github.com/username-kamu/repositori-kamu.git
+cd repositori-kamu
 ```
 
 ### 2. Install Dependencies
 
-Install the necessary packages by running:
+Install semua package yang diperlukan dengan menjalankan:
 
 ```bash
 npm install
-# or
+# atau
 yarn install
 ```
 
-### 3. Set Up Environment Variables
+### 3. Setting Environment Variables
 
-Create a `.env.local` file in the root of the project and add your Appwrite configuration variables. You can refer to the `.env.example` file if available.
+Buat file `.env.local` di root proyek dan tambahkan konfigurasi Appwrite kamu di sana. Bisa lihat contoh di `.env.example` kalau ada.
 
-Example `.env.local`:
+Contoh `.env.local`:
 
 ```plaintext
-NEXT_PUBLIC_APPWRITE_ENDPOINT=<YOUR_APPWRITE_ENDPOINT>
-NEXT_PUBLIC_APPWRITE_PROJECT_ID=<YOUR_APPWRITE_PROJECT_ID>
-NEXT_PUBLIC_APPWRITE_DATABASE_ID=<YOUR_APPWRITE_DATABASE_ID>
-NEXT_PUBLIC_APPWRITE_USER_COLLECTION_ID=<YOUR_APPWRITE_USER_COLLECTION_ID>
-NEXT_PUBLIC_APPWRITE_FILES_COLLECTION_ID=<YOUR_APPWRITE_FILES_COLLECTION_ID>
-NEXT_PUBLIC_APPWRITE_BUCKET_ID=<YOUR_APPWRITE_BUCKET_ID>
-NEXT_PUBLIC_APPWRITE_SECRET_KEY=<YOUR_APPWRITE_SECRET_KEY>
+NEXT_PUBLIC_APPWRITE_ENDPOINT=<APPWRITE_ENDPOINT_KAMU>
+NEXT_PUBLIC_APPWRITE_PROJECT_ID=<APPWRITE_PROJECT_ID_KAMU>
+NEXT_PUBLIC_APPWRITE_DATABASE_ID=<APPWRITE_DATABASE_ID_KAMU>
+NEXT_PUBLIC_APPWRITE_USER_COLLECTION_ID=<APPWRITE_USER_COLLECTION_ID_KAMU>
+NEXT_PUBLIC_APPWRITE_FILES_COLLECTION_ID=<APPWRITE_FILES_COLLECTION_ID_KAMU>
+NEXT_PUBLIC_APPWRITE_BUCKET_ID=<APPWRITE_BUCKET_ID_KAMU>
+NEXT_PUBLIC_APPWRITE_SECRET_KEY=<APPWRITE_SECRET_KEY_KAMU>
 ```
 
-### 4. Run the Application
+### 4. Jalankan Aplikasi
 
-Start the Next.js application in development mode:
+Jalankan aplikasi Next.js dalam mode development:
 
 ```bash
 npm run dev
-# or
+# atau
 yarn dev
 ```
 
-The application will be available at `http://localhost:3000`.
+Aplikasinya bakal bisa diakses di `http://localhost:3000`.
 
-## Usage
+## Cara Pakai
 
-- **ShadCN UI**: This application leverages ShadCN for building user interfaces with beautiful and accessible components.
-- **Appwrite Integration**: Appwrite is used as the backend for managing user authentication, databases, and file storage.
+- **ShadCN UI**: Aplikasi ini pakai ShadCN buat bangun antarmuka yang keren dan mudah diakses.
+- **Appwrite Integration**: Appwrite jadi backend untuk ngurusin autentikasi pengguna, database, dan penyimpanan file.
 
-## Build for Production
+## Build untuk Produksi
 
-To create an optimized production build, use:
+Buat build aplikasi untuk produksi dengan:
 
 ```bash
 npm run build
-# or
+# atau
 yarn build
 ```
 
-To start the production build:
+Dan untuk mulai build produksinya:
 
 ```bash
 npm start
-# or
+# atau
 yarn start
 ```
 
-## Additional Resources
+## Sumber Tambahan
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [ShadCN Documentation](https://shadcn.dev/docs)
-- [Appwrite Documentation](https://appwrite.io/docs)
+- [Dokumentasi Next.js](https://nextjs.org/docs)
+- [Dokumentasi ShadCN](https://shadcn.dev/docs)
+- [Dokumentasi Appwrite](https://appwrite.io/docs)
 
 ---
 
-This `README.md` covers all essential steps from setup to running and deploying the application. Let me know if you need additional details or customizations!
+Selamat mencoba, semoga lancar ya!
+```
