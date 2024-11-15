@@ -1,16 +1,25 @@
 import Card from "@/components/Card";
 import Sort from "@/components/Sort";
-import { getFiles } from "@/lib/actions/file.action";
+import { getFiles, getTotalSpaceUsed } from "@/lib/actions/file.action";
 import { Models } from "node-appwrite";
 import React from "react";
-import { getFileTypesParams } from "@/lib/utils";
+import { getFileTypesParams, convertFileSize } from "@/lib/utils";
 
 const page = async ({ searchParams, params }: SearchParamProps) => {
   const type = ((await params)?.type as string) || "";
   const searchText = ((await searchParams)?.query as string) || "";
   const sort = ((await searchParams)?.sort as string) || "";
   const types = getFileTypesParams(type) as FileType[];
-  const files = await getFiles({ types, searchText, sort });
+
+  // Retrieve files and total space used
+  const [files, totalSpace] = await Promise.all([
+    getFiles({ types, searchText, sort }),
+    getTotalSpaceUsed(),
+  ]);
+
+  // Calculate the total space for the specified type
+  const totalTypeSpace = types.length > 0 ? totalSpace.used : 0;
+
   return (
     <div className="page-container">
       <section className="w-full">
@@ -18,7 +27,10 @@ const page = async ({ searchParams, params }: SearchParamProps) => {
 
         <div className="total-size-section">
           <p className="body-1">
-            Total: <span className="h5">0 MB</span>
+            Total:{" "}
+            <span className="h5">
+              {convertFileSize(totalTypeSpace) || "0 MB"}
+            </span>
           </p>
           <div className="sort-container">
             <p className="body-1 hidden sm:block text-light-200">
@@ -28,6 +40,7 @@ const page = async ({ searchParams, params }: SearchParamProps) => {
           </div>
         </div>
       </section>
+
       {files.total > 0 ? (
         <section className="file-list">
           {files.documents.map((file: Models.Document) => (
